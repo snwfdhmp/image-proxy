@@ -2,8 +2,17 @@
 
 ## Usage
 
-GET /image?url=URL&cache_ttl=SECONDS&compress_mode=webp&compress_args=-q 1 -af
+```
+GET /image
+        ?url=<initial_image_url>
+        &compress=<mode>
+```
 
-- Determine local filepath
-- If not exist, serve proxy image, save to local, run compress if needed
-- If exist, serve local image, update cache if ttl expired
+|mode|format|parameters|
+|webp,lossless,best|webp|`-lossless 100 -q 100 -m 6`|
+|webp,lossy,afq1|webp|`-af -q 1`|
+|webp,lossy,afq10|webp|`-af -q 10`|
+|webp,lossy,afq20|webp|`-af -q 20`|
+
+- If the image is not cached yet, it will redirect to the original image while caching the image in the background to disk.
+- Once a cached image exists, it will serve the cached image.
