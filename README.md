@@ -8,6 +8,8 @@ GET /img
         &compress=<mode>
 ```
 
+## Compression
+
 |mode|format|parameters|
 |---|---|---|
 |webp,lossless|webp|`-lossless 100 -q 100 -m 6`|
@@ -20,8 +22,10 @@ GET /img
 
 ## Example
 
-Suppose the cache server is located at `https://proxy.com/`
+Assuming the cache server is located at `https://proxy.com/`
 
 Initial image URL: `https://blog.hubspot.com/hubfs/image8-2.jpg`
+
+Cached only: `https://proxy.com/img?url=https://blog.hubspot.com/hubfs/image8-2.jpg`
 
 Cached and compressed: `https://proxy.com/img?compress=webp,lossless&url=https://blog.hubspot.com/hubfs/image8-2.jpg`
