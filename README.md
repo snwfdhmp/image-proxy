@@ -3,7 +3,7 @@
 ## Usage
 
 ```
-GET /image
+GET /img
         ?url=<initial_image_url>
         &compress=<mode>
 ```
