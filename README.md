@@ -10,7 +10,7 @@ GET /img
 
 ## Compression
 
-|mode|format|parameters|
+|mode|format|parameters used for compression|
 |---|---|---|
 |webp,lossless|webp|`-lossless 100 -q 100 -m 6`|
 |webp,lossy,afq1|webp|`-af -q 1`|
