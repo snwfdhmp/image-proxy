@@ -4,8 +4,8 @@
 
 ```
 GET /img
-        ?compress=<mode>
-        &url=<initial_image_url>
+        ?url=<initial_image_url>
+        &compress=<mode>
 ```
 
 |mode|format|parameters|
