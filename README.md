@@ -1,5 +1,7 @@
 # Image Proxy
 
+Transparently cache and compress images on the fly.
+
 ## Usage
 
 ```
