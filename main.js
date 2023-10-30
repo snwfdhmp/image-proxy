@@ -108,7 +108,7 @@ const getImage = async (queryString, queryParams, localPath) => {
 
   switch (queryParams.compress) {
     case "webp":
-    case "webp,lossless,best":
+    case "webp,lossless":
       finalPath = await compress.webp(downloadPath, "-lossless 100 -q 100 -m 6")
       break
     case "webp,lossy,afq1":
