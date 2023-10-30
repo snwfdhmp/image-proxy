@@ -5,7 +5,7 @@
 ```
 GET /img
         ?url=<initial_image_url>
-        [&compress=<mode>]
+        &compress=<mode>
 ```
 
 ## Compression
