@@ -14,7 +14,7 @@ GET /img
 
 - If the image is not cached yet, it will redirect to the original image while caching it in the background.
 - Once a cached image exists, it will serve the cached image.
-- It compression is requested, it will compress the image. Different compression modes can be requested for the same image at the same time. (image_url,compression_mode) pairs are cached separately.
+- If compression is requested, it will compress in the background during the caching phase. Multiple compression modes can be requested for the same image because (image_url,compression_mode) pairs are cached separately.
 
 ## Compression
 
