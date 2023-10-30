@@ -10,6 +10,12 @@ GET /img
         &compress=<mode>
 ```
 
+## How it works
+
+- If the image is not cached yet, it will redirect to the original image while caching it in the background.
+- Once a cached image exists, it will serve the cached image.
+- It compression is requested, it will compress the image. Different compression modes can be requested for the same image at the same time. (image_url,compression_mode) pairs are cached separately.
+
 ## Compression
 
 |mode|format|parameters used for compression|
@@ -19,8 +25,6 @@ GET /img
 |webp,lossy,afq10|webp|`-af -q 10`|
 |webp,lossy,afq20|webp|`-af -q 20`|
 
-- If the image is not cached yet, it will redirect to the original image while caching the image in the background to disk.
-- Once a cached image exists, it will serve the cached image.
 
 ## Example
 
