@@ -9,6 +9,7 @@ GET /image
 ```
 
 |mode|format|parameters|
+|---|---|---|
 |webp,lossless,best|webp|`-lossless 100 -q 100 -m 6`|
 |webp,lossy,afq1|webp|`-af -q 1`|
 |webp,lossy,afq10|webp|`-af -q 10`|
