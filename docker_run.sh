@@ -1,0 +1,1 @@
+docker run -d --name image-proxy --restart unless-stopped --network host snwfdhmp1/image-proxy
