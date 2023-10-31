@@ -107,19 +107,24 @@ const getImage = async (queryString, queryParams, localPath) => {
   await httpDownload(queryParams.url, downloadPath)
 
   switch (queryParams.compress) {
-    case "webp,lossless,best":
+    case "webp":
+    case "webp,lossless":
       finalPath = await compress.webp(downloadPath, "-lossless 100 -q 100 -m 6")
-      await fs.promises.rm(downloadPath)
       break
     case "webp,lossy,afq1":
       finalPath = await compress.webp(downloadPath, "-af -q 1")
-      await fs.promises.rm(downloadPath)
+      break
+    case "webp,lossy,afq10":
+      finalPath = await compress.webp(downloadPath, "-af -q 10")
       break
     case undefined:
       log.info("no compress")
       break
     default:
       log.info(`unknown compress type ${queryParams.compress}`)
+  }
+  if (finalPath != downloadPath) {
+    fs.promises.rm(downloadPath)
   }
 
   log.info(`renaming ${finalPath} to ${localPath}`)
