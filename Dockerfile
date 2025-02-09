@@ -5,6 +5,6 @@ COPY yarn.lock .
 
 RUN yarn
 
-COPY main.js
+COPY main.js .
 
 CMD node main.js
