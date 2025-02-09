@@ -32,6 +32,9 @@ app.use((req, res, next) => {
   log.info(`${req.method} ${req.url}`)
   next()
 })
+app.get("/", (req, res) => {
+  res.send("ok")
+})
 app.get("/img", async (req, res) => {
   const times = {}
   times.start = Date.now()
